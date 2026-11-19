@@ -93,12 +93,14 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {			if(key_flag==1){
-	
-		HAL_Delay(20);
+  {			
+		if(key_flag==1){
+			HAL_Delay(20);
+	if(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_1)==GPIO_PIN_RESET){
+		
 		HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_9);
 			HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
-		
+	}
 		key_flag=0;
 	}
 }
